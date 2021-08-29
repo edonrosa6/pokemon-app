@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import { CardList } from './components/CardList';
+import { SearchBox } from './components/SearchBox';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+  constructor(){
+    super();
+
+    this.state = {
+      pokemons: [],
+      search: ''
+    }
+  }
+
+  componentDidMount(){
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=100')
+    .then(response => response.json())
+    .then(name => 
+      this.setState({
+        pokemons:name.results
+      }));
+  }
+
+  handleChange=(e) => {
+    this.setState({search: e.target.value});
+  };
+
+  render(){
+
+    const {pokemons, search } = this.state;
+    const fileteredPokemons = pokemons.filter
+                              (pokemon => pokemon.name.toLowerCase()
+                              .includes(search.toLowerCase()));
+
+    return(
+      <div className="App">
+        <h1 className="titulo">Pokémon</h1>
+        <SearchBox
+          placeholder='Buscar Pokémon' 
+          handleChange= {this.handleChange}
+        />
+        <CardList pokemons={fileteredPokemons}></CardList>
+
+      </div>
+    );
+  }
 }
 
 export default App;

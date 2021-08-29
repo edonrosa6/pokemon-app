@@ -1,13 +1,84 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body::-webkit-scrollbar {
+  width: 1.1rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 203, 5);
+  outline: 1px solid rgb(255, 203, 5);
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: 3px solid rgb(49, 106, 178);
+  border-radius: 35px;
+  margin-left: 15px;
+  box-shadow: 0 0.4rem 1rem rgba(49, 107, 178, 0.253);
+}
+
+.titulo {
+  font-size: 75px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  color: rgb(255, 203, 5);
+  text-shadow: 0 0.5rem rgb(49, 106, 178);
+  text-align: center;
+}
+
+.img-size {
+  width: 200;
+  height: 200px;
+  padding: 35px;
+  filter: drop-shadow(5px 5px 15px #ff9800) brightness(60%);
+  border-radius: 50px;
+  transition: 0.3s ease-in-out;
+}
+
+.nombre-pokemon {
+  color: rgb(255, 203, 5);
+  text-align: center;
+  font-weight: 900;
+  font-family: "Montserrat", sans-serif;
+  padding-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+input:focus,
+button:focus,
+a:focus {
+  color: rgb(49, 106, 178);
+  outline: 3px solid rgb(255, 203, 5);
+}
+
+.search {
+  width: 200px;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.searchBox {
+  width: 100%;
+  text-align: center;
+}
+
+.img-size:hover {
+  filter: drop-shadow(5px 5px 25px #ff9800) brightness(100%);
 }
