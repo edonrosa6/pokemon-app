@@ -22,7 +22,6 @@ body::-webkit-scrollbar-thumb {
 .card {
   margin-top: 15px;
   margin-bottom: 15px;
-  border: 3px solid rgb(49, 106, 178);
   border-radius: 35px;
   margin-left: 15px;
   box-shadow: 0 0.4rem 1rem rgba(49, 107, 178, 0.253);
@@ -35,6 +34,7 @@ body::-webkit-scrollbar-thumb {
   color: rgb(255, 203, 5);
   text-shadow: 0 0.5rem rgb(49, 106, 178);
   text-align: center;
+  margin: 25px;
 }
 
 .img-size {
@@ -47,22 +47,26 @@ body::-webkit-scrollbar-thumb {
 }
 
 .nombre-pokemon {
-  color: rgb(255, 203, 5);
+  color: rgb(49, 106, 178);
   text-align: center;
   font-weight: 900;
   font-family: "Montserrat", sans-serif;
   padding-bottom: 10px;
+  font-size: 24px;
 }
 
 a {
   text-decoration: none;
 }
 
-input:focus,
-button:focus,
-a:focus {
+input:focus {
   color: rgb(49, 106, 178);
   outline: 3px solid rgb(255, 203, 5);
+}
+
+button:focus,
+a:focus {
+  outline: none;
 }
 
 .search {
@@ -72,6 +76,12 @@ a:focus {
   padding: 10px;
   margin-top: 15px;
   margin-bottom: 15px;
+  background-image: url("./assets/search.png");
+  background-position: left;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position-x: 6px;
+  text-indent: -15px;
 }
 
 .searchBox {
@@ -81,4 +91,11 @@ a:focus {
 
 .img-size:hover {
   filter: drop-shadow(5px 5px 25px #ff9800) brightness(100%);
+  transform: translateY(-0.5rem);
+}
+
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 50px;
+  }
 }
